@@ -29,59 +29,56 @@ The ontology contains **37 classes and subclasses** shown below,
 
 | Branch | Classes |
 |---|---|
-| **Rooms** | `LivingRoom`, `BedRoom`, `BathRoom`, `Kitchen` |
+| **SmartHome** | `SmartHome`, `Rooms` |
 | **IoTDevices** | `Sensors`, `Actuators`, `Controllers` |
-| **Event** | `MotionEvent`, `SecurityEvent`, `TemperatureEvent` |
+| **Controllers** | `SmartController`, `SecurityController` |
+| **Actuators** | `SmartLight`, `Thermostat`, `SmartLock`, `SmartDoor` |
+| **Sensors** | `TemperatureSensor`, `MotionSensor`, `SmokeSensor`, `CameraSensor` |
+| **Event** | `MovementDetected`, `SmokeDetected`, `SecurityThreat`, `TemperatureChange` |
 | **Person** | `Resident`, `Guest` |
-| **IoTServices** | `MonitoringService`, `EnergyManagementServices`, `SecurityServices` |
+| **EnvironmentalObservation** | `TemperatureObserver`, `LightObserver`, `SmokeObserver` |
 
 ---
 ### Product Hierarchy
 
 ```
-Product
+owl:Thing
+│
+├── SmartHome
 │
 ├── Rooms
-│   ├── LivingRoom
-│   ├── BathRoom
-│   ├── Kitchen
-│   ├── BedRoom
 │
 ├── Person
-│   ├── Guest
 │   ├── Resident
-│
-├── IoTServices
-│   ├── EnergyManagementService
-│   ├── MonitoringServices
-│   └── SecurityServices
+│   └── Guest
 │
 ├── IoTDevices
-│   ├── Actuator
-│       ├── SmartDoor
-│       ├── SmartLock
+│   ├── Sensors
+│   │   ├── TemperatureSensor
+│   │   ├── MotionSensor
+│   │   └── SmokeSensor
+│   │   └── CameraSensor
+│   │
+│   ├── Controllers
+│   │   ├── SmartHomeController
+│   │   └── SecurityController
+│   │
+│   └── Actuators
 │       ├── SmartLight
 │       ├── SmartThermostat
-│   ├── Controllers
-│       ├── SmartHomeController
-│       ├── SmartSecurityController
-│   └── Sensors
-│       ├── HumiditySensor
-│       ├── LightSensor
-│       ├── TemperatureSensor
-│       ├── SmokeSensor
-│       ├── MotionSensor
+│       ├── SmartLock
+│       └── SmartDoor
 │
-├── Event
-│   ├── MotionEvent
-│   ├── SecurityEvent
-│   ├── TemperatureEvent
+├── Events
+│   ├── TemperatureChange
+│   ├── MovementDetected
+│   ├── SmokeDetected
+│   └── SecurityThreat
 │
-├── EnvironementalObservation
-│   ├── HumidityObservation
-│   ├── IlluminationOberservation
-│   ├── TemperatureOberservation
-│   ├── SecurityOberservation
+└── EnvironmentalObservation
+    ├── TemperatureObserver
+    ├── LightObserver
+    └── SmokeObserver
 
 ```
 
@@ -91,16 +88,15 @@ The ontology uses data properties to store information.
 
 It includes:
 
-- `HasDeviceID`
-- `HasBatteryLevel`
-- `HasHumidityValue`
-- `HasIlluminationValue`
-- `HasIPAddress`
-- `HasPowerConsumption`
-- `HasServiceName`
-- `HasTemperatureValue`
-- `HasTimestamp`
-- `IsActive`
+- `DeviceName`
+- `DeviceStatus`
+- `EventDescription`
+- `EventTime`
+- `MeasurementValue`
+- `ObservationTime`
+- `ObservationValue`
+- `PersonName`
+- `RoomName`
 
 ---
 
@@ -110,17 +106,20 @@ It includes:
 |---|---|---|---|
 | `ContainsDevice` | `Rooms` | `IoTDevices` | **Functional**, Inverse: `LocatedIn` |
 | `LocatedIn` | `IoTDevices` | `Rooms` | Inverse: `ContainsDevice` |
-| `ControlledBy` | `IoTDevices` | `Controllers` | Inverse: `ControlsDevice` |
-| `ControlsDevice` | `Controllers` | `IoTDevices` | Inverse: `ControlledBy` |
-| `Detects` | `Sensor` | `Event` | — |
-| `GeneratesEvent` | `IoTDevices` | `Event` | — |
-| `HasResident` | `SmartHome` | `Person` | Inverse: `LivesIn` |
-| `LivesIn` | `Person` | `SmartHome` | Inverse: `HasResident` |
-| `HasRoom` | `SmartHome` | `Rooms` | Inverse: `IsRoomOf` |
+| `ControlledBy` | `IoTDevices` | `Controllers` | Inverse: `Controls` |
+| `Controls` | `Controllers` | `IoTDevices` | Inverse: `ControlledBy` |
+| `Detects` | `Sensors` | `Events` | — |
+| `HasDevice` | `SmartHome` | `IoTDevices` | — |
+| `HasSensor` | `Rooms` | `Sensors` | — |
+| `HasController` | `SmartHome` | `Controllers` | — |
+| `HasGuest` | `SmartHome` | `Guest` | — |
+| `Detects` | `Sensors` | `Event` | — |
+| `HasResident` | `SmartHome` | `Resident` | — |
+| `HasRooms` | `SmartHome` | `Rooms` | Inverse: `IsRoomOf` |
 | `IsRoomOf` | `Rooms` | `SmartHome` | Inverse: `HasRoom` |
-| `Observes` | `Sensor` | `EnvironmentalObservation` | — |
-| `ProvidesService` | `IoTDevices` | `IoTServices` | — |
-| `RespondsTo` | `Controllers` | `Events` | — |
+| `Observes` | `Sensors` | `EnvironmentalObservation` | — |
+| `OccursIn` | `Events` | `Rooms` | — |
+| `Triggers` | `Events` | `Actuators` | — |
 
 ---
 ### Data Properties (9)
