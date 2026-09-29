@@ -15,7 +15,7 @@ The main objectives of this ontology project are:
 
 - Represent a home which includes rooms where smart devices can be installed.
 - Installing IoTdevices like sensors, actuators and controllers.
-- The SmartHomeController who control the devices.
+- The SmartHomeController, who control the devices.
 - Sensors installed in desired rooms and events detected.
 - Connecting everything together.
 
@@ -100,7 +100,7 @@ It includes:
 
 ---
 
-### Object Properties (13)
+### Object Properties (16)
 
 | Property | Domain | Range | Characteristics |
 |---|---|---|---|
@@ -122,46 +122,99 @@ It includes:
 | `Triggers` | `Events` | `Actuators` | — |
 
 ---
-### Data Properties (9)
+### Data Properties (7)
 
 | Property | Domain | Range | Characteristics |
 |---|---|---|---|
-| `HasBatteryLevel` | `IoTDevices` | `xsd:decimal` | **Functional** |
-| `HasDeviceID` | `IoTDevices` | `xsd:string` | **Functional** |
-| `HasHumidityValue` | `HumidityObservation` | `xsd:decimal` | **Functional** |
-| `HasIlluminationValue` | `IlluminationObserver` | `xsd:decimal` | — |
-| `HasIPAddress` | `IoTDevices` | `xsd:4string` | — |
-| `HasPowerConsumption` | `IoTDevicesr` | `xsd:string` | — |
-| `HastemperatureValue` | `TemperatureObservation` | `xsd:decimal` | — |
-| `HasServiceName` | `IoTDevices` | `xsd:string` | — |
-| `isActive` | `IoTDevices` | `xsd:boolean` | — |
+| `RoomName` | `Rooms` | `xsd:string` | **Functional** |
+| `DeviceName` | `IoTDevices` | `xsd:string` | **Functional** |
+| `DeviceStatus` | `IoTDevices` | `xsd:string` | **Functional** |
+| `Measurementvalue` | `Sensors` | `xsd:decimal` | — |
+| `ObservationValue` | `EnvironmentalObservation` | `xsd:4string` | — |
+| `EventDescription` | `Events` | `xsd:string` | — |
+| `EventTime` | `Events` | `xsd:dateTime` | — |
 
 ---
 
-## ABox — Individuals (20)
+##  Individuals 
 
 | Individual | Class | Notable assertions |
 |---|---|---|
-| `LivingRoom` | `Room` | Contains HueBulb_01, EntranceCam, FrontDoorLock |
-| `Kitchen` | `Room` | Contains Nest_Thermo, KitchenTempSensor |
-| `Bedroom` | `Room` | Contains BedroomLight, BedroomMotion |
-| `SecurityRoom` | `Room` | Contains only SecurityMotion (Sensor) |
-| `Garden` | `OutdoorSpace` | Monitored by GardenCam |
-| `LivingArea` | `Zone` | hasRoom: LivingRoom, Kitchen |
-| `NightZone` | `Zone` | hasRoom: Bedroom |
-| `GardenCam` | `Camera` | monitors: Garden |
-| `EntranceCam` | `Camera` | monitors: LivingRoom, locatedIn: LivingRoom |
-| `BedroomMotion` | `MotionSensor` | locatedIn: Bedroom |
-| `SecurityMotion` | `MotionSensor` | locatedIn: SecurityRoom |
-| `KitchenTempSensor` | `TemperatureSensor` | temperatureValue: 21.5 |
-| `Nest_Thermo` | `Thermostat` | locatedIn: Kitchen |
-| `HueBulb_01` | `Light` | isActive: true, brightnessLevel: 80 |
-| `BedroomLight` | `Light` | isActive: **false**, brightnessLevel: 0 |
-| `FrontDoorLock` | `SmartLock` | controlled by MainHub AND OwnerPhone |
-| `MainHub` | `HomeHub` | controls: HueBulb_01, Nest_Thermo, BedroomLight, FrontDoorLock |
-| `OwnerPhone` | `MobileApp` | controls: FrontDoorLock, GardenCam |
-| `NightMode` | `Scene` | activated by MainHub and OwnerPhone |
-| `HomeWifi` | `Network` | All devices connected here |
+| `LivingRoom` | `Room` | Contains LRSmartDoor and LRLightSensor |
+| `Kitchen` | `Room` | Contains KitchenSmokeSensor, KitchenTempSensor |
+| `Bedroom` | `Room` | Contains BRMovementSensor, BRLockDoor |
+| `BathRoom` | `Room` | - |
+| `SmartCamera` | `CameraSensor` | locatedIn: LivingRoom |
+| `LivingRoomLightObs` | `LightObserver` | locatedIn: LivingRoom |
+| `BedRoomMotionSensor` | `MotionSensor` | locatedIn: BedRoom |
+| `LivingRoomMotionSensor` | `MotionSensor` | locatedIn: LivingRoom |
+| `MotionDetected` | `MovementDetected` | locatedIn: LivingRoom |
+| `HomeSecurityController` | `SecurityController` | Controls: SmartLock, SmartCamera |
+| `SecurityThreat01` | `SecurityThreat` | Controls: SmartLock |
+| `MainHomeController` | `SmartHomeController` | Controls: SmartLock, SmartCamera |
+| `BRSmartLock` | `SmartLock` | LocatedIn: BedRoom |
+| `LRSmartLock` | `SmartLock` | LocatedIn: LivingRoom |
+| `KitchenThermostat` | `SmartThermostat` | LocatedIn: Kitchen |
+| `KitchenSmokeObs` | `SmartObserver` | LocatedIn: Kitchen |
+| `TemperatureIncrease` | `TemperatureChange` | TemperatureValue: 24, OccursIn: Kitchen |
+
+---
+## Competency questions and DL queries
+| Label | Competency Question | DL Query |
+|---|---|---|
+| `CQ1` | `Who is the resident at smarthome01` | smarthome:Resident and inverse smarthome:HasResident value smarthome:SmartHome01 |
+| `CQ2` | `Which devices are the sensors` | smarthome:Sensors |
+| `CQ3` | `Which IoTDevices are located in kitchen` | smarthome:IoTDevices and smarthome:LocatedIn value smarthome:Kitchen |
+| `CQ4` | `Which controllers are controlling the actuators` | smarthome:Controllers and smarthome:Controls some smarthome:Actuators |
+| `CQ5` | `Which events are occurring in living room` | smarthome:Events and smarthome:OccursIn value smarthome:LivingRoom |
+| `CQ6` | `Which devices are controlled by controllers` | smarthome:IoTDevices and smarthome:ControlledBy some smarthome:Controllers |
+
+---
+## SWRL Rules
+### Rule1: Smoke Location
+If a smoke event is detected by smoke sensors, the event will occur in the room in which that sensor is presnt.
+
+SmokeSensor(?s) ^
+LocatedIn(?s, ?r) ^
+Detects(?s, ?e) ^
+SmokeDetected(?e)
+→ OccursIn(?e, ?r)
+
+### Rule2: Motion Location
+This describes location of movement event from the place of the motion sensor.
+
+MotionSensor(?s) ^
+LocatedIn(?s, ?r) ^
+Detects(?s, ?e) ^
+MovementDetected(?e)
+→ OccursIn(?e, ?r)
+
+### Rule3: Motion Location
+This rule determines about the temperature changes event that occurred. 
+
+TemperatureSensor(?s) ^
+LocatedIn(?s, ?r) ^
+Detects(?s, ?e) ^
+TemperatureChange(?e)
+→ OccursIn(?e, ?r)
+
+### Rule4: Smoke Safety trigger
+A smoke event when occurred, can trigger the smart door to close located in the same room of event.
+
+SmokeDetected(?e) ^
+OccursIn(?e, ?r) ^
+SmartDoor(?d) ^
+LocatedIn(?d, ?r)
+→ Triggers(?e, ?d)
+
+### Rule5: SecurityAutomation
+A security threat triggers the smart lock in the location of the security threat.
+
+SecurityThreat(?e) ^
+OccursIn(?e, ?r) ^
+SmartLock(?l) ^
+LocatedIn(?l, ?r)
+→ Triggers(?e, ?l)
 
 ---
 
@@ -171,3 +224,6 @@ It includes:
 2. Open **Protégé 5.5**
 3. File → Open → select `smarthome.owl`
 4. Reasoner → **HermiT** → Start Reasoner
+5. Open **SWRL** tab and run **Drools** to execute the rules.
+6. Open **DLQuery** and enter competency questions and execute.
+7. Use **OntoGraf** to visualize ontology relations
