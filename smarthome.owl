@@ -1,0 +1,1239 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8/"
+     xml:base="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:smarthome="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#ContainsDevice -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#ContainsDevice">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LocatedIn"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#ControlledBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#ControlledBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Controls"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Controllers"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Controls -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Controls">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Controllers"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Detects -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Detects">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Sensors"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Events"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#HasActuator -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#HasActuator">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Rooms"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Actuators"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#HasController -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#HasController">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartHome"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Controllers"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#HasDevice -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#HasDevice">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartHome"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#HasGuest -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#HasGuest">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartHome"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Guest"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#HasResident -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#HasResident">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartHome"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Resident"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#HasRooms -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#HasRooms">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IsRoomOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartHome"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Rooms"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#HasSensor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#HasSensor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Rooms"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Sensors"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IsRoomOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IsRoomOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Rooms"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartHome"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LocatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LocatedIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Observes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Observes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Sensors"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#EnvironmentalObservation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#OccursIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#OccursIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Events"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Rooms"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Triggers -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Triggers">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Events"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Actuators"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#DeviceName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#DeviceName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#DeviceStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#DeviceStatus">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#EventDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#EventDescription">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Events"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#EventTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#EventTime">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Events"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#MeasurementValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#MeasurementValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Sensors"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#ObservationTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#ObservationTime">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#EnvironmentalObservation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#ObservationValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#ObservationValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#EnvironmentalObservation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#PersonName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#PersonName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Name"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#RoomName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#RoomName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Rooms"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Actuators -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Actuators">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#CameraSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#CameraSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Sensors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Controllers -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Controllers">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#EnvironmentalObservation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#EnvironmentalObservation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Events -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Events"/>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Guest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Guest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LightObserver -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LightObserver">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#EnvironmentalObservation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#MotionSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#MotionSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Sensors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#MovementDetected -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#MovementDetected">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Events"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Resident -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Resident">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Rooms -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Rooms"/>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SecurityController -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SecurityController">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Controllers"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SecurityThreat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SecurityThreat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Events"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Sensors -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Sensors">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartDoor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartDoor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Actuators"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartHome -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartHome"/>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartHomeController -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartHomeController">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Controllers"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartLight -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartLight">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Actuators"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartLock -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartLock">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Actuators"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartThermostat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartThermostat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Actuators"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmokeDetected -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmokeDetected">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Events"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmokeObserver -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmokeObserver">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#EnvironmentalObservation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmokeSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmokeSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Sensors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#TemperatureChange -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#TemperatureChange">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Events"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#TemperatureObserver -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#TemperatureObserver">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#EnvironmentalObservation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#TemperatureSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#TemperatureSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Sensors"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#BRSmartLock -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#BRSmartLock">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Actuators"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartLock"/>
+        <smarthome:ControlledBy rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#HomeSecurityController"/>
+        <smarthome:LocatedIn rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#BedRoom"/>
+        <smarthome:DeviceName>BedRoomSmartLock</smarthome:DeviceName>
+        <smarthome:DeviceStatus>Active</smarthome:DeviceStatus>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#BathRoom -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#BathRoom">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Rooms"/>
+        <smarthome:RoomName>BathRoom</smarthome:RoomName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#BedRoom -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#BedRoom">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Rooms"/>
+        <smarthome:ContainsDevice rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#BRSmartLock"/>
+        <smarthome:ContainsDevice rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#BedRoomMotionSensor"/>
+        <smarthome:RoomName>BedRoom</smarthome:RoomName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#BedRoomMotionSensor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#BedRoomMotionSensor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#MotionSensor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Sensors"/>
+        <smarthome:Detects rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#MotionDetected"/>
+        <smarthome:LocatedIn rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#BedRoom"/>
+        <smarthome:DeviceName>BedRoomMotionSensor</smarthome:DeviceName>
+        <smarthome:DeviceStatus>Active</smarthome:DeviceStatus>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#HomeSecurityController -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#HomeSecurityController">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Controllers"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SecurityController"/>
+        <smarthome:Controls rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#BRSmartLock"/>
+        <smarthome:Controls rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LRSmartLock"/>
+        <smarthome:Controls rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartCamera"/>
+        <smarthome:DeviceName>Home Security Controller</smarthome:DeviceName>
+        <smarthome:DeviceStatus>Active</smarthome:DeviceStatus>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#John -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#John">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Resident"/>
+        <smarthome:PersonName>John</smarthome:PersonName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Kitchen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Kitchen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Rooms"/>
+        <smarthome:ContainsDevice rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenDoor"/>
+        <smarthome:ContainsDevice rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenSL"/>
+        <smarthome:ContainsDevice rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenSmokeSensor"/>
+        <smarthome:ContainsDevice rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenTempSensor"/>
+        <smarthome:ContainsDevice rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenThermostat"/>
+        <smarthome:RoomName>Kitchen</smarthome:RoomName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenDoor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenDoor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Actuators"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartDoor"/>
+        <smarthome:LocatedIn rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Kitchen"/>
+        <smarthome:DeviceName>KitchenDoor</smarthome:DeviceName>
+        <smarthome:DeviceStatus>Active</smarthome:DeviceStatus>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenSL -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenSL">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Actuators"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartLight"/>
+        <smarthome:ControlledBy rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#MainHomeController"/>
+        <smarthome:LocatedIn rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Kitchen"/>
+        <smarthome:DeviceName>KitchenSL</smarthome:DeviceName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenSmokeObs -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenSmokeObs">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#EnvironmentalObservation"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmokeObserver"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenSmokeSensor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenSmokeSensor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Sensors"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmokeSensor"/>
+        <smarthome:Detects rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Smoke"/>
+        <smarthome:LocatedIn rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Kitchen"/>
+        <smarthome:Observes rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenSmokeObs"/>
+        <smarthome:DeviceName>KitchenSmokeSensor</smarthome:DeviceName>
+        <smarthome:DeviceStatus>Active</smarthome:DeviceStatus>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenTempObs -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenTempObs">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#EnvironmentalObservation"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#TemperatureObserver"/>
+        <smarthome:ObservationValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">24.5</smarthome:ObservationValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenTempSensor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenTempSensor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Sensors"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#TemperatureSensor"/>
+        <smarthome:Detects rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#TemperatureIncrease"/>
+        <smarthome:LocatedIn rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Kitchen"/>
+        <smarthome:Observes rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenTempObs"/>
+        <smarthome:DeviceName>KitchenTempSensor</smarthome:DeviceName>
+        <smarthome:DeviceStatus>Active</smarthome:DeviceStatus>
+        <smarthome:MeasurementValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">22.5</smarthome:MeasurementValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenThermostat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenThermostat">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Actuators"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartThermostat"/>
+        <smarthome:ControlledBy rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#MainHomeController"/>
+        <smarthome:LocatedIn rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Kitchen"/>
+        <smarthome:DeviceName>KitchenSmartThermostat</smarthome:DeviceName>
+        <smarthome:DeviceStatus>Active</smarthome:DeviceStatus>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LRSmartLock -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LRSmartLock">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Actuators"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartLock"/>
+        <smarthome:ControlledBy rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#HomeSecurityController"/>
+        <smarthome:LocatedIn rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LivingRoom"/>
+        <smarthome:DeviceName>LivingRoomSmartLock</smarthome:DeviceName>
+        <smarthome:DeviceStatus>Active</smarthome:DeviceStatus>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LivingRoom -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LivingRoom">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Rooms"/>
+        <smarthome:ContainsDevice rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LRSmartLock"/>
+        <smarthome:ContainsDevice rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LivingRoomMotionSensor"/>
+        <smarthome:ContainsDevice rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LivingRoomSL"/>
+        <smarthome:ContainsDevice rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartCamera"/>
+        <smarthome:RoomName>LivingRoom</smarthome:RoomName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LivingRoomLightObs -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LivingRoomLightObs">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#EnvironmentalObservation"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LightObserver"/>
+        <smarthome:ObservationValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">350</smarthome:ObservationValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LivingRoomMotionSensor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LivingRoomMotionSensor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#MotionSensor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Sensors"/>
+        <smarthome:Detects rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#MotionDetected"/>
+        <smarthome:LocatedIn rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LivingRoom"/>
+        <smarthome:DeviceName>LivindRoomMotionSensor</smarthome:DeviceName>
+        <smarthome:DeviceStatus>Active</smarthome:DeviceStatus>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LivingRoomSL -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LivingRoomSL">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Actuators"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartLight"/>
+        <smarthome:ControlledBy rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#MainHomeController"/>
+        <smarthome:LocatedIn rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LivingRoom"/>
+        <smarthome:DeviceName>LivingRoomSL</smarthome:DeviceName>
+        <smarthome:DeviceStatus>Active</smarthome:DeviceStatus>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#MainHomeController -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#MainHomeController">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Controllers"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartHomeController"/>
+        <smarthome:Controls rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenSL"/>
+        <smarthome:Controls rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenThermostat"/>
+        <smarthome:Controls rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LivingRoomSL"/>
+        <smarthome:DeviceName>Home Controller</smarthome:DeviceName>
+        <smarthome:DeviceStatus>Active</smarthome:DeviceStatus>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#MotionDetected -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#MotionDetected">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Events"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#MovementDetected"/>
+        <smarthome:OccursIn rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#BedRoom"/>
+        <smarthome:OccursIn rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LivingRoom"/>
+        <smarthome:EventDescription>Motion detected</smarthome:EventDescription>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Sarah -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Sarah">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Guest"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Person"/>
+        <smarthome:PersonName>Sarah</smarthome:PersonName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SecurityThreat1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SecurityThreat1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Events"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SecurityThreat"/>
+        <smarthome:OccursIn rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LivingRoom"/>
+        <smarthome:Triggers rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LRSmartLock"/>
+        <smarthome:EventDescription>Security threat detected in LivingRoom</smarthome:EventDescription>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartCamera -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartCamera">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#CameraSensor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#IoTDevices"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Sensors"/>
+        <smarthome:ControlledBy rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#HomeSecurityController"/>
+        <smarthome:LocatedIn rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LivingRoom"/>
+        <smarthome:DeviceName>SmartCamera</smarthome:DeviceName>
+        <smarthome:DeviceStatus>Active</smarthome:DeviceStatus>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartHome01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartHome01">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartHome"/>
+        <smarthome:HasController rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#HomeSecurityController"/>
+        <smarthome:HasController rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#MainHomeController"/>
+        <smarthome:HasDevice rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#BRSmartLock"/>
+        <smarthome:HasDevice rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#BedRoomMotionSensor"/>
+        <smarthome:HasDevice rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#HomeSecurityController"/>
+        <smarthome:HasDevice rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenDoor"/>
+        <smarthome:HasDevice rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenSL"/>
+        <smarthome:HasDevice rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenSmokeSensor"/>
+        <smarthome:HasDevice rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenTempSensor"/>
+        <smarthome:HasDevice rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenThermostat"/>
+        <smarthome:HasDevice rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LRSmartLock"/>
+        <smarthome:HasDevice rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LivingRoomMotionSensor"/>
+        <smarthome:HasDevice rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LivingRoomSL"/>
+        <smarthome:HasDevice rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#MainHomeController"/>
+        <smarthome:HasDevice rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartCamera"/>
+        <smarthome:HasGuest rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Sarah"/>
+        <smarthome:HasResident rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#John"/>
+        <smarthome:HasRooms rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#BathRoom"/>
+        <smarthome:HasRooms rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#BedRoom"/>
+        <smarthome:HasRooms rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Kitchen"/>
+        <smarthome:HasRooms rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LivingRoom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Smoke -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Smoke">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Events"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmokeDetected"/>
+        <smarthome:OccursIn rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Kitchen"/>
+        <smarthome:Triggers rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#KitchenDoor"/>
+        <smarthome:EventDescription>Smoke Increases in Kitchen</smarthome:EventDescription>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#TemperatureIncrease -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#TemperatureIncrease">
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Events"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#TemperatureChange"/>
+        <smarthome:OccursIn rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Kitchen"/>
+        <smarthome:EventDescription>Temperature Increased to 24C</smarthome:EventDescription>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#s">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#r">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#e">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#l">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#d">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label>MotionLocationRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#MotionSensor"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LocatedIn"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#s"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#r"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Detects"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#s"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#e"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#MovementDetected"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#e"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#OccursIn"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#e"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#r"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label>SecurityThreatRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SecurityThreat"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#e"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#OccursIn"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#e"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#r"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartLock"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#l"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LocatedIn"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#l"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#r"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Triggers"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#e"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#l"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label>SmokeSafetyRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmokeDetected"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#e"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#OccursIn"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#e"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#r"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmartDoor"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#d"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LocatedIn"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#d"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#r"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Triggers"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#e"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#d"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label>SmokeLocationRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmokeSensor"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LocatedIn"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#s"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#r"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Detects"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#s"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#e"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#SmokeDetected"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#e"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#OccursIn"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#e"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#r"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label>TemperatureLocationRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#TemperatureSensor"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#LocatedIn"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#s"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#r"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#Detects"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#s"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#e"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#TemperatureChange"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#e"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#OccursIn"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#e"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/paklap.pk/ontologies/2026/8/untitled-ontology-8#r"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
